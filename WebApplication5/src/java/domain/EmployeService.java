@@ -5,18 +5,18 @@
  */
 package domain;
 
-import entities.Service;
 import abstractFacade.AbstractFacade;
+import entities.Employe;
+
 /**
  *
  * @author casper
  */
-public class ServiceService extends AbstractFacade<Service> {
+public class EmployeService extends AbstractFacade<Employe> {
 
     @Override
-    protected Class<Service> getEntityClass() {
-        return Service.class;
-        }
-    
-    
+    protected Class getEntityClass() {
+        return Employe.class;
+    }
+
 }

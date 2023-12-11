@@ -2,14 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/casper/Documents/emsi5/lachgar/WebApplication5/WebApplication5/src/java/abstractFacade/AbstractFacade.java</file>
-            <file>file:/C:/Users/casper/Documents/emsi5/lachgar/WebApplication5/WebApplication5/src/java/Main.java</file>
-            <file>file:/C:/Users/casper/Documents/emsi5/lachgar/WebApplication5/WebApplication5/src/java/entities/Service.java</file>
-            <file>file:/C:/Users/casper/Documents/emsi5/lachgar/WebApplication5/WebApplication5/src/java/domain/ServiceBean.java</file>
-            <file>file:/C:/Users/casper/Documents/emsi5/lachgar/WebApplication5/WebApplication5/src/java/domain/ServiceService.java</file>
-            <file>file:/C:/Users/casper/Documents/emsi5/lachgar/WebApplication5/WebApplication5/src/java/util/HibernateUtil.java</file>
-            <file>file:/C:/Users/casper/Documents/emsi5/lachgar/WebApplication5/WebApplication5/src/java/hibernate.cfg.xml</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

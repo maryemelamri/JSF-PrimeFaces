@@ -5,6 +5,8 @@
  */
 package domain;
 
+import abstractFacade.AbstractFacade;
+import com.sun.faces.action.RequestMapping;
 import entities.Service;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,22 +20,29 @@ import javax.faces.bean.ViewScoped;
  * @author Lachgar
  */
 @ManagedBean
-@ViewScoped
-public class ServiceBean {
+@RequestScoped
+public class ServiceBean extends AbstractFacade<Service>  {
 
     private Service service;
     private List<Service> services;
+        private ServiceService serviceService;
+
     
-    
+
     public ServiceBean() {
         service =  new Service();
         services = new ArrayList<>();
     }
-
+    
+    @Override
+    public void create(Service entity) {
+        super.create(entity);
+        System.out.println("domain.ServiceBean.create()");}
     
     public void onCreationAction(){
         services.add(service);
         service = new Service();
+        
     }
     public Service getService() {
         return service;
@@ -44,11 +53,21 @@ public class ServiceBean {
     }
 
     public List<Service> getServices() {
+            if (services == null) {
+            services = serviceService.findAll();
+        }
         return services;
+
     }
 
     public void setServices(List<Service> services) {
         this.services = services;
+    }
+
+    @Override
+    protected Class<Service> getEntityClass() {
+       return Service.class;
+//To change body of generated methods, choose Tools | Templates.
     }
     
     

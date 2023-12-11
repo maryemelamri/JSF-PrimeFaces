@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>PrimeFaces</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                    <p:clock pattern="dd-MM-yyyy"></p:clock>
+                    <p:clock pattern="hh-mm-ss"></p:clock>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                    Footer
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="175" header="Left" collapsible="true">
+                    <p:menu>
+                        <p:submenu label="Resources">
+                            <p:menuitem value="Demo" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
+                            <p:menuitem value="Documentation" url="http://www.primefaces.org/documentation.html" />
+                            <p:menuitem value="Forum" url="http://forum.primefaces.org/" />
+                            <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
+
+                        </p:submenu>
+
+                    </p:menu>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    <h:form>
+                        <p:panel header="Gestion des Employes">
+                            <p:panelGrid columns="2" id="p1">
+                               
+
+                                <p:outputLabel value="nom"/>
+                                <h:inputText value="#{employeBean.employe.nom}"/>
+                                
+                                 <p:outputLabel value="prenom"/>
+                                 <h:inputText value="#{employeBean.employe.prenom}"/>
+
+                                <p:outputLabel value="Date"/>
+                                <p:calendar value="#{employeBean.employe.dateNaissance}"/>
+
+                                <p:outputLabel value="Photo"/>
+                                <p:inputText value="#{employeBean.employe.photo}"/>
+
+                            <!--    <p:selectOneMenu value="#{employeBean.employe.service.id}" required="true">
+                                    <f:selectItem itemLabel="Select One" itemValue=""/>
+                                    <f:selectItems value="#{serviceBean.findAll()}" var="s"
+                                                   itemLabel="#{s.libelle}" itemValue="#{s.id}"/>
+                                </p:selectOneMenu>-->
+                                <p:commandButton value="Add" actionListener="#{employeBean.create(employeBean.employe)}" update=":h"/>
+
+                            </p:panelGrid>
+                        </p:panel>
+                    </h:form>
+                    <h:form id="h">
+                        <p:dataTable var="s" value="#{employeBean.findAll()}">
+                            <p:column headerText="Id">
+                                <h:outputText value="#{s.id}"/>
+                            </p:column>
+                            <p:column headerText="nom">
+                                <h:outputText value="#{s.nom}"/>
+                            </p:column>
+                            <p:column headerText="prenom">
+                                <h:outputText value="#{s.prenom}"/>
+                            </p:column>    
+                            <p:column headerText="dateNaissance">
+                                <h:outputText value="#{s.dateNaissance}"/>
+                            </p:column>
+                            <p:column headerText="service">
+                                <h:outputText value="#{s.service}"/>
+                            </p:column>
+                        </p:dataTable>
+                    </h:form>
+                </p:layoutUnit>
+
+            </p:layout>
+
+        </h:body>
+
+    </f:view>
+</html>
